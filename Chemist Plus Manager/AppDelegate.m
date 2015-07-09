@@ -17,6 +17,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    NSShadow *shadow = [NSShadow new];
+//    shadow.shadowOffset = CGSizeMake(0.0f, 1.0f);
+//    shadow.shadowColor = [UIColor redColor];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName: [UIColor blackColor],
+                                                           NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-Regular" size:21.0f]
+                                                           
+                                                           }];
+    
     return YES;
 }
 

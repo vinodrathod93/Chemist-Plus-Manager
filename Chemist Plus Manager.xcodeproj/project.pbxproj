@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		823AEDD91B4E2B8500E64BBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDD81B4E2B8500E64BBB /* main.m */; };
 		823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */; };
-		823AEDDF1B4E2B8500E64BBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDDE1B4E2B8500E64BBB /* ViewController.m */; };
 		823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE01B4E2B8500E64BBB /* Main.storyboard */; };
 		823AEDE41B4E2B8500E64BBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE31B4E2B8500E64BBB /* Images.xcassets */; };
 		823AEDE71B4E2B8500E64BBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */; };
 		823AEDF31B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDF21B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m */; };
+		823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */; };
+		823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE031B4E2CF400E64BBB /* OrderViewCell.m */; };
+		823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		823AEDD81B4E2B8500E64BBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		823AEDDA1B4E2B8500E64BBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		823AEDDD1B4E2B8500E64BBB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		823AEDDE1B4E2B8500E64BBB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		823AEDE11B4E2B8500E64BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		823AEDE31B4E2B8500E64BBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		823AEDE61B4E2B8500E64BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		823AEDEC1B4E2B8500E64BBB /* Chemist Plus ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chemist Plus ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		823AEDF11B4E2B8500E64BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823AEDF21B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chemist_Plus_ManagerTests.m; sourceTree = "<group>"; };
+		823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListTableViewController.h; sourceTree = "<group>"; };
+		823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListTableViewController.m; sourceTree = "<group>"; };
+		823AEE021B4E2CF400E64BBB /* OrderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewCell.h; sourceTree = "<group>"; };
+		823AEE031B4E2CF400E64BBB /* OrderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewCell.m; sourceTree = "<group>"; };
+		823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
+		823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +89,13 @@
 			children = (
 				823AEDDA1B4E2B8500E64BBB /* AppDelegate.h */,
 				823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */,
-				823AEDDD1B4E2B8500E64BBB /* ViewController.h */,
-				823AEDDE1B4E2B8500E64BBB /* ViewController.m */,
+				823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */,
+				823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */,
+				823AEE021B4E2CF400E64BBB /* OrderViewCell.h */,
+				823AEE031B4E2CF400E64BBB /* OrderViewCell.m */,
 				823AEDE01B4E2B8500E64BBB /* Main.storyboard */,
+				823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */,
+				823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */,
 				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
 				823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */,
 				823AEDD61B4E2B8500E64BBB /* Supporting Files */,
@@ -219,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823AEDDF1B4E2B8500E64BBB /* ViewController.m in Sources */,
 				823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */,
+				823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */,
+				823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */,
+				823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */,
 				823AEDD91B4E2B8500E64BBB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
