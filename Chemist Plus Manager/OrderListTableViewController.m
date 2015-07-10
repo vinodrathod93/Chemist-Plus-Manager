@@ -14,8 +14,13 @@
 
 @property (nonatomic, strong)NSMutableDictionary *jsonDictionary;
 
+@property (nonatomic, strong) UIView *overlayView;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
+
 @property (retain) NSMutableDictionary *tableViewCells;
 @property (retain) NSMutableArray *tableViewSections;
+
+@property (nonatomic, assign) BOOL didViewLoadedFirstTime;
 
 @end
 
@@ -28,18 +33,42 @@ NSString * const JSON_DATA_URL = @"http://chemistplus.in/adminorderdetails.php";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadJSONData];
+    self.didViewLoadedFirstTime = YES;
     
-    [self setupDataSourceForSection:[self loadOrderDates]];
+    [self fetchDataAndUpdateTableView];
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self loadJSONData];
-    [self setupDataSourceForSection:[self loadOrderDates]];
-    [self.tableView reloadData];
+    
+    if (!self.didViewLoadedFirstTime) {
+        [self fetchDataAndUpdateTableView];
+    }
+    
 }
+
+-(void)fetchDataAndUpdateTableView {
+    [self loadActivityIndicator];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [self loadJSONData];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityIndicator stopAnimating];
+            self.activityIndicator.hidden = YES;
+            [self.overlayView removeFromSuperview];
+            
+            [self setupDataSourceForSection:[self loadOrderDates]];
+            
+            [self.tableView reloadData];
+        });
+    });
+}
+
 
 -(void)loadJSONData {
     NSURL *url = [NSURL URLWithString:JSON_DATA_URL];
@@ -99,6 +128,7 @@ NSString * const JSON_DATA_URL = @"http://chemistplus.in/adminorderdetails.php";
     detailVC.imageString = [[self.jsonDictionary valueForKey:@"image"] objectAtIndex:indexPath.row];
     detailVC.orderIDString = [[self.jsonDictionary valueForKey:@"orderid"]objectAtIndex:indexPath.row];
     
+    self.didViewLoadedFirstTime = NO;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
@@ -167,6 +197,19 @@ NSString * const JSON_DATA_URL = @"http://chemistplus.in/adminorderdetails.php";
     NSDate *convertDate = [dateFormat dateFromString:string];
     
     return convertDate;
+}
+
+-(void)loadActivityIndicator {
+    self.overlayView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.center = self.overlayView.center;
+    [self.overlayView addSubview:self.activityIndicator];
+    
+    [self.navigationController.view addSubview:self.overlayView];
+    
+    [self.activityIndicator startAnimating];
 }
 
 @end
