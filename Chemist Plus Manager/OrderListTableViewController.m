@@ -25,7 +25,7 @@
 @end
 
 NSString * const CELL_IDENTIFIER = @"ordersCell";
-NSString * const JSON_DATA_URL = @"http://chemistplus.in/adminorderdetails.php";
+NSString * const JSON_DATA_URL = @"http://neediator.in/NeediatorWS.asmx/vendordashboard";
 
 
 @implementation OrderListTableViewController
@@ -35,7 +35,7 @@ NSString * const JSON_DATA_URL = @"http://chemistplus.in/adminorderdetails.php";
     
     self.didViewLoadedFirstTime = YES;
     
-    [self fetchDataAndUpdateTableView];
+//    [self fetchDataAndUpdateTableView];
     
     
 }

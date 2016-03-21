@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */; };
 		823AEDD91B4E2B8500E64BBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDD81B4E2B8500E64BBB /* main.m */; };
 		823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */; };
 		823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE01B4E2B8500E64BBB /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neediator_Logo_Final.png; sourceTree = "<group>"; };
 		823AEDD31B4E2B8500E64BBB /* Chemist Plus Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chemist Plus Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		823AEDD71B4E2B8500E64BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823AEDD81B4E2B8500E64BBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				823AEDE01B4E2B8500E64BBB /* Main.storyboard */,
 				823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */,
 				823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */,
+				678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */,
 				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
 				823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */,
 				823AEDD61B4E2B8500E64BBB /* Supporting Files */,
@@ -212,6 +215,7 @@
 				823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */,
 				823AEDE71B4E2B8500E64BBB /* LaunchScreen.xib in Resources */,
 				823AEDE41B4E2B8500E64BBB /* Images.xcassets in Resources */,
+				678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +432,7 @@
 				823AEDF81B4E2B8500E64BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		823AEDF91B4E2B8500E64BBB /* Build configuration list for PBXNativeTarget "Chemist Plus ManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +441,7 @@
 				823AEDFB1B4E2B8500E64BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
