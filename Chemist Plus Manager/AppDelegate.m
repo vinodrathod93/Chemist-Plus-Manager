@@ -27,6 +27,13 @@
                                                            
                                                            }];
     
+    // To avoid lag of textfield
+    UITextField *lagFreeField = [[UITextField alloc] init];
+    [self.window addSubview:lagFreeField];
+    [lagFreeField becomeFirstResponder];
+    [lagFreeField resignFirstResponder];
+    [lagFreeField removeFromSuperview];
+    
     return YES;
 }
 
