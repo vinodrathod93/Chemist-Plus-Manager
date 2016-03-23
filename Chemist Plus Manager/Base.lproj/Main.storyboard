@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i40-c9-XzE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="37B-8b-D6Y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -59,11 +59,17 @@
                             <outlet property="delegate" destination="TWc-90-0wj" id="RO7-RC-Mhn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Orders" id="gAz-lf-Tmj"/>
+                    <navigationItem key="navigationItem" title="Orders" id="gAz-lf-Tmj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1G2-dx-8Di">
+                            <connections>
+                                <action selector="refreshOrders:" destination="TWc-90-0wj" id="2Dl-gf-Efx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2m-d0-Xyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="428"/>
+            <point key="canvasLocation" x="648" y="-149"/>
         </scene>
         <!--Vendor Login View Controller-->
         <scene sceneID="kCc-77-oCe">
@@ -283,28 +289,120 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmt-2E-9CK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="426"/>
+            <point key="canvasLocation" x="1358" y="-151"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Account-->
+        <scene sceneID="L9W-D4-ifh">
+            <objects>
+                <viewController id="VlB-CO-4cW" customClass="VendorAccountViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nA9-UC-evx"/>
+                        <viewControllerLayoutGuide type="bottom" id="ncT-aO-ADx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SBR-Lu-MF3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hnd-CI-OZP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myAccountCellIdentifier" id="yQy-sN-aHN">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yQy-sN-aHN" id="Swf-o7-aA5">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VlB-CO-4cW" id="vt3-uM-iRn"/>
+                                    <outlet property="delegate" destination="VlB-CO-4cW" id="NYw-th-PDY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hnd-CI-OZP" firstAttribute="leading" secondItem="SBR-Lu-MF3" secondAttribute="leading" id="3tr-MX-Flc"/>
+                            <constraint firstItem="hnd-CI-OZP" firstAttribute="top" secondItem="nA9-UC-evx" secondAttribute="bottom" constant="-64" id="Plg-5b-FgC"/>
+                            <constraint firstItem="ncT-aO-ADx" firstAttribute="top" secondItem="hnd-CI-OZP" secondAttribute="bottom" constant="-49" id="fYk-i9-l5A"/>
+                            <constraint firstAttribute="trailing" secondItem="hnd-CI-OZP" secondAttribute="trailing" id="qFh-B8-8el"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account" id="g4z-o4-2lN"/>
+                    <connections>
+                        <outlet property="tableview" destination="hnd-CI-OZP" id="igA-de-hnc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Oc-6r-wyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="359" y="572"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jnh-JR-dx6">
+            <objects>
+                <tabBarController id="37B-8b-D6Y" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="GJi-Gy-OiK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="i40-c9-XzE" kind="relationship" relationship="viewControllers" id="3bC-jT-PoU"/>
+                        <segue destination="4ZR-7R-6Qq" kind="relationship" relationship="viewControllers" id="1i1-XB-aAG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1Z-i2-o2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1197" y="-19"/>
+        </scene>
+        <!--Orders-->
         <scene sceneID="3vg-ae-Lqt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i40-c9-XzE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Orders" image="my_orders" id="9dA-ap-L3J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qDl-Qg-XU9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="d5J-5i-6Vb">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="TWc-90-0wj" kind="relationship" relationship="rootViewController" id="tkB-jb-GI5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oom-fA-g5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="127.5" y="428.87323943661971"/>
+            <point key="canvasLocation" x="-350" y="-149"/>
+        </scene>
+        <!--My Account-->
+        <scene sceneID="ZW0-V9-Ay8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4ZR-7R-6Qq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Account" image="MyAccount" id="rnw-JX-Flu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zsq-9B-fk2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VlB-CO-4cW" kind="relationship" relationship="rootViewController" id="Psl-ug-RaE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrZ-by-7Fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-453" y="572"/>
         </scene>
     </scenes>
     <resources>
+        <image name="MyAccount" width="30" height="30"/>
         <image name="Neediator_Logo_Final.png" width="561" height="122"/>
+        <image name="my_orders" width="25" height="25"/>
     </resources>
 </document>

@@ -54,7 +54,7 @@ typedef void(^completion)(BOOL finished);
         
         [self submitSigninDataWithCompletion:^(BOOL finished) {
             if (finished) {
-                [self.navigationController dismissViewControllerAnimated:YES completion:^{
+                [self dismissViewControllerAnimated:YES completion:^{
                     
                     NSLog(@"Logged In");
                     
@@ -73,8 +73,8 @@ typedef void(^completion)(BOOL finished);
 -(NSString *)validateForm {
     NSString *errorMessage;
     
-    if (![self.usernameTF.text isValidEmail]) {
-        errorMessage = @"Enter valid email";
+    if (![self.usernameTF.text isValidVendorID]) {
+        errorMessage = @"Enter valid vendor username";
     } else if (![self.passwordTF.text isValidPassword]) {
         errorMessage = @"Enter valid password";
     }

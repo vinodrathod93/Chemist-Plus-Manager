@@ -14,5 +14,6 @@
 - (BOOL)isValidPassword;
 - (BOOL)isValidName;
 - (BOOL)isValidDOB;
+- (BOOL)isValidVendorID;
 
 @end

@@ -29,4 +29,8 @@
     return (self.length >= 1);
 }
 
+- (BOOL)isValidVendorID {
+    return (self.length >= 1);
+}
+
 @end

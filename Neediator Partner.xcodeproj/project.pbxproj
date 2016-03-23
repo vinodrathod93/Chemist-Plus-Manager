@@ -17,6 +17,7 @@
 		823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */; };
 		823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE031B4E2CF400E64BBB /* OrderViewCell.m */; };
 		823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */; };
+		82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */; };
 		82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */; };
 		82EDCA021CA172A800206EC8 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDCA011CA172A800206EC8 /* Vendor.m */; };
 		82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDCA041CA1752500206EC8 /* NSString+Validation.m */; };
@@ -51,6 +52,8 @@
 		823AEE031B4E2CF400E64BBB /* OrderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewCell.m; sourceTree = "<group>"; };
 		823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
 		823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
+		82EB44D51CA2962C0031FF99 /* VendorAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorAccountViewController.h; sourceTree = "<group>"; };
+		82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorAccountViewController.m; sourceTree = "<group>"; };
 		82EDC9FD1CA170E800206EC8 /* VendorLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VendorLoginViewController.h; path = ../VendorLoginViewController.h; sourceTree = "<group>"; };
 		82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VendorLoginViewController.m; path = ../VendorLoginViewController.m; sourceTree = "<group>"; };
 		82EDCA001CA172A800206EC8 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 			children = (
 				823AEDDA1B4E2B8500E64BBB /* AppDelegate.h */,
 				823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */,
+				82EB44D51CA2962C0031FF99 /* VendorAccountViewController.h */,
+				82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */,
 				82EDC9FD1CA170E800206EC8 /* VendorLoginViewController.h */,
 				82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */,
 				823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */,
@@ -253,6 +258,7 @@
 				82EDCA021CA172A800206EC8 /* Vendor.m in Sources */,
 				823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */,
 				823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */,
+				82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */,
 				82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */,
 				82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */,
 				823AEDD91B4E2B8500E64BBB /* main.m in Sources */,

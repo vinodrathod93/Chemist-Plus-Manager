@@ -12,16 +12,16 @@
 {
     NSString *chemistID;
 }
-@property (nonatomic, strong) UIActionSheet *cancelActionSheet;
-@property (nonatomic, strong) UIActionSheet *confirmActionSheet;
+@property (nonatomic, strong) UIAlertController *cancelActionSheet;
+@property (nonatomic, strong) UIAlertController *confirmActionSheet;
 
 @property (nonatomic, strong) UIAlertView *otherReasonAlertView;
 @property (nonatomic, strong) UIAlertView *successAlertView;
 
 @end
 
-NSString * const CONFIRMATION_WEBSERVICE_URL = @"http://chemistplus.in/chemist_order_confirmation.php";
-NSString * const CANCELLATION_WEBSERVICE_URL = @"http://chemistplus.in/chemist_cancel_order.php";
+NSString * const CONFIRMATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vendorWS.asmx/Order_approved";
+NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vendorWS.asmx/Order_disapproved";
 
 #define SUCCESSFULL_ID 1
 #define FAKE_PHOTO_ID 2
@@ -108,44 +108,52 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://chemistplus.in/chemist_c
 }
 
 -(void)showCancelOptions {
-    self.cancelActionSheet = [[UIActionSheet alloc] init];
-    [self.cancelActionSheet setDelegate:self];
-    [self.cancelActionSheet setTitle:@"Select the Cancelling Reason"];
-    [self.cancelActionSheet addButtonWithTitle:@"Fake Photo"];
-    [self.cancelActionSheet addButtonWithTitle:@"Out of Stock"];
-    [self.cancelActionSheet setDestructiveButtonIndex:[self.cancelActionSheet addButtonWithTitle:@"Other Reason"]];
+    self.cancelActionSheet = [UIAlertController alertControllerWithTitle:@"Select the Cancelling Reason" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+                              
+    UIAlertAction *fakePhoto = [UIAlertAction actionWithTitle:@"Fake Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Fake Photo");
+        [self sendTheCancellationStatusWithReasonID:FAKE_PHOTO_ID andReason:@"Fake Photo"];
+    }];
+                              
+                              UIAlertAction *outOfStock = [UIAlertAction actionWithTitle:@"Out of Stock" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Out of Stock");
+        [self sendTheCancellationStatusWithReasonID:OUT_OF_STOCK_ID andReason:@"Out of Stock"];
+    }];
+                              
+                              UIAlertAction *otherReason = [UIAlertAction actionWithTitle:@"Other Reason" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Other Reason");
+        [self alertOnOtherReasonAction];
+    }];
+                              
+                              UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self.cancelActionSheet dismissViewControllerAnimated:YES completion:nil];
+    }];
     
-    [self.cancelActionSheet setCancelButtonIndex:[self.cancelActionSheet addButtonWithTitle:@"Dismiss"]];
     
-    [self.cancelActionSheet showInView:self.view];
+    [self.cancelActionSheet addAction:fakePhoto];
+    [self.cancelActionSheet addAction:outOfStock];
+    [self.cancelActionSheet addAction:otherReason];
+    [self.cancelActionSheet addAction:cancelAction];
 }
 
 -(void)showConfirmOptions {
-    self.confirmActionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to Confirm the Selected Order" delegate:self cancelButtonTitle:@"Dismiss" destructiveButtonTitle:nil otherButtonTitles:@"Yes Confirm it.", nil];
+    self.confirmActionSheet = [UIAlertController alertControllerWithTitle:@"Are you sure to Confirm the Selected Order" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [self.confirmActionSheet showInView:self.view];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Yes Confirm it." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Confirmed");
+        [self sendTheConfirmationStatus];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self.confirmActionSheet dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [self.confirmActionSheet addAction:confirmAction];
+    [self.confirmActionSheet addAction:cancelAction];
+    
+    [self presentViewController:self.confirmActionSheet animated:YES completion:nil];
 }
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if ([actionSheet isEqual:self.confirmActionSheet]) {
-        if (buttonIndex == 0) {
-            NSLog(@"Confirmed");
-            [self sendTheConfirmationStatus];
-        }
-    } else if ([actionSheet isEqual:self.cancelActionSheet]) {
-        if (buttonIndex == 0) {
-            NSLog(@"Fake Photo");
-            [self sendTheCancellationStatusWithReasonID:FAKE_PHOTO_ID andReason:@"Fake Photo"];
-            
-        } else if (buttonIndex == 1) {
-            NSLog(@"Out of Stock");
-            [self sendTheCancellationStatusWithReasonID:OUT_OF_STOCK_ID andReason:@"Out of Stock"];
-        } else if (buttonIndex == 2) {
-            NSLog(@"Other Reason");
-            [self alertOnOtherReasonAction];
-        }
-    }
-}
 
 -(void)sendTheConfirmationStatus {
     NSString *sendDataString = [[NSString alloc] initWithFormat:@"order_id=%@&chemist_id=%@",self.orderIDString,chemistID];

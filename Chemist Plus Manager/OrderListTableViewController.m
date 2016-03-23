@@ -28,7 +28,7 @@
 @end
 
 NSString * const CELL_IDENTIFIER = @"ordersCell";
-NSString * const JSON_DATA_URL = @"http://neediator.in/NeediatorWS.asmx/vendordashboard";
+NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vendordashboard";
 
 
 @implementation OrderListTableViewController
@@ -38,12 +38,16 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/NeediatorWS.asmx/vendorda
     
     self.didViewLoadedFirstTime = YES;
     
-//    [self fetchDataAndUpdateTableView];
+
     
     Vendor *savedVendor = [Vendor savedVendor];
     
     if (savedVendor != nil) {
         NSLog(@"Nothing");
+        
+        
+            [self fetchDataAndUpdateTableView:savedVendor.vendorID];
+        
     }
     else {
         
@@ -62,25 +66,25 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/NeediatorWS.asmx/vendorda
     [super viewDidAppear:animated];
     
     
-    
-    
-    
+}
+
+
+- (IBAction)refreshOrders:(id)sender {
     
     Vendor *savedVendor = [Vendor savedVendor];
     
     if (savedVendor != nil) {
         NSLog(@"Nothing");
         
-        if (!self.didViewLoadedFirstTime) {
-            [self fetchDataAndUpdateTableView:savedVendor.vendorID];
-        }
+        
+        [self fetchDataAndUpdateTableView:savedVendor.vendorID];
+        
     }
     else {
         
         VendorLoginViewController *vendorLoginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"vendorLoginVC"];
         [self presentViewController:vendorLoginVC animated:YES completion:nil];
     }
-    
 }
 
 -(void)fetchDataAndUpdateTableView:(NSString *)vendorID {
@@ -175,15 +179,40 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/NeediatorWS.asmx/vendorda
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    OrderDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"orderDetailsVC"];
-//    detailVC.customerNameString = [[[self.jsonDictionary valueForKey:@"name"] objectAtIndex:indexPath.row] capitalizedString];
-//    detailVC.addressString = [[[self.jsonDictionary valueForKey:@"address"] objectAtIndex:indexPath.row] capitalizedString];
-//    detailVC.phoneNumberString = [[[self.jsonDictionary valueForKey:@"phone"] objectAtIndex:indexPath.row] capitalizedString];
-//    detailVC.imageString = [[self.jsonDictionary valueForKey:@"image"] objectAtIndex:indexPath.row];
-//    detailVC.orderIDString = [[self.jsonDictionary valueForKey:@"orderid"]objectAtIndex:indexPath.row];
-//    
-//    self.didViewLoadedFirstTime = NO;
-//    [self.navigationController pushViewController:detailVC animated:YES];
+    NSDictionary *order = self.pendingArray[indexPath.section];
+    
+    
+    OrderDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"orderDetailsVC"];
+    detailVC.customerNameString = [[order valueForKey:@"UserId"] stringValue];
+    detailVC.addressString = [[order valueForKey:@"adddressid"] stringValue];
+    detailVC.phoneNumberString = [[order valueForKey:@"UserId"] stringValue];
+    
+    BOOL isPrescription = [[order valueForKey:@"isPrescription"] boolValue];
+    
+    if (isPrescription) {
+        NSArray *presOrder = [order objectForKey:@"upload_prescription"];
+        
+        if (presOrder.count == 0) {
+            detailVC.imageString = nil;
+        }
+        else
+            detailVC.imageString = [presOrder lastObject][@"image_url"];
+    }
+    else {
+        
+        NSArray *genOrder = [order objectForKey:@"order_details"];
+        
+        if (genOrder.count == 0) {
+            detailVC.imageString = nil;
+        }
+        else
+            detailVC.imageString = genOrder[0][@"image_url"];
+    }
+    
+    detailVC.orderIDString = [order valueForKey:@"OrderNo"];
+    
+    
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 -(void)setupDataSourceForSection:(NSArray *)sortedDateArray {
