@@ -181,11 +181,17 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
     
     NSDictionary *order = self.pendingArray[indexPath.section];
     
+    NSLog(@"%@", order);
+    
+    NSDictionary *user = [order objectForKey:@"users"][0];
+    NSDictionary *address = [order objectForKey:@"address"][0];
+    
     
     OrderDetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"orderDetailsVC"];
-    detailVC.customerNameString = [[order valueForKey:@"UserId"] stringValue];
-    detailVC.addressString = [[order valueForKey:@"adddressid"] stringValue];
-    detailVC.phoneNumberString = [[order valueForKey:@"UserId"] stringValue];
+    detailVC.customerNameString = [[user valueForKey:@"name"] capitalizedString];
+    detailVC.addressString =  [NSString stringWithFormat:@"%@ - %@", [[address valueForKey:@"address"] capitalizedString], [[address valueForKey:@"city"] capitalizedString]];
+    detailVC.phoneNumberString = @"No Phone number";
+    
     
     BOOL isPrescription = [[order valueForKey:@"isPrescription"] boolValue];
     
@@ -209,7 +215,7 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
             detailVC.imageString = genOrder[0][@"image_url"];
     }
     
-    detailVC.orderIDString = [order valueForKey:@"OrderNo"];
+    detailVC.orderIDString = [order valueForKey:@"id"];
     
     
     [self.navigationController pushViewController:detailVC animated:YES];

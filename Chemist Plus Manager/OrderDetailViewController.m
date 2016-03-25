@@ -10,7 +10,7 @@
 
 @interface OrderDetailViewController ()
 {
-    NSString *chemistID;
+    
 }
 @property (nonatomic, strong) UIAlertController *cancelActionSheet;
 @property (nonatomic, strong) UIAlertController *confirmActionSheet;
@@ -40,7 +40,6 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vend
     self.address.text = self.addressString;
     
     
-    chemistID = [[NSString alloc]initWithFormat:@"12345"];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -134,6 +133,9 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vend
     [self.cancelActionSheet addAction:outOfStock];
     [self.cancelActionSheet addAction:otherReason];
     [self.cancelActionSheet addAction:cancelAction];
+    
+    
+    [self presentViewController:self.cancelActionSheet animated:YES completion:nil];
 }
 
 -(void)showConfirmOptions {
@@ -156,7 +158,7 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vend
 
 
 -(void)sendTheConfirmationStatus {
-    NSString *sendDataString = [[NSString alloc] initWithFormat:@"order_id=%@&chemist_id=%@",self.orderIDString,chemistID];
+    NSString *sendDataString = [[NSString alloc] initWithFormat:@"id=%@",self.orderIDString];
     NSData *data = [NSData dataWithBytes:[sendDataString UTF8String] length:[sendDataString length]];
     
     NSURLSession *session = [NSURLSession sharedSession];
@@ -170,15 +172,18 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vend
     [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)data.length] forHTTPHeaderField:@"Content-Length"];
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+        NSArray *approvedArray = dictionary[@"approved"];
+        
+        NSLog(@"%@", approvedArray);
         NSString *message;
         
-        if ([responseString isEqualToString:@"1"]) {
+        if (approvedArray != nil && approvedArray.count != 0) {
             message = @"Order has been Successfully Confirmed";
-        } else if ([responseString isEqualToString:@"0"]) {
+        } else
             message = @"Order Could not be confirmed. Please Try again Later.";
-        }
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self alertOnActionPressed:message];
@@ -190,7 +195,7 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vend
 
 
 -(void)sendTheCancellationStatusWithReasonID:(int)reasonID andReason:(NSString *)reasonString {
-    NSString *sendDataString = [[NSString alloc]initWithFormat:@"order_id=%@&chemist_id=%@&reason_id=%d&reason_string=%@",self.orderIDString, chemistID, reasonID, reasonString];
+    NSString *sendDataString = [[NSString alloc]initWithFormat:@"id=%@&reason=%@",self.orderIDString, reasonString];
     NSData *data = [NSData dataWithBytes:[sendDataString UTF8String] length:[sendDataString length]];
     
     NSURLSession *session = [NSURLSession sharedSession];

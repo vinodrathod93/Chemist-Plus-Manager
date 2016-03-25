@@ -131,7 +131,7 @@ typedef void(^completion)(BOOL finished);
                         Vendor *vendor              = [[Vendor alloc]init];
                         vendor.vendorID             = [data valueForKey:@"id"];
                         vendor.email              = [data valueForKey:@"username"];
-                        vendor.addresses          = [data objectForKey:@"addreslist"];
+                        vendor.addresses          = [data objectForKey:@"addresslist"];
                         
                         [vendor save];
                         
