@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */; };
+		823AEDD91B4E2B8500E64BBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDD81B4E2B8500E64BBB /* main.m */; };
+		823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */; };
+		823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE01B4E2B8500E64BBB /* Main.storyboard */; };
+		823AEDE41B4E2B8500E64BBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE31B4E2B8500E64BBB /* Images.xcassets */; };
+		823AEDE71B4E2B8500E64BBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */; };
+		823AEDF31B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDF21B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m */; };
+		823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */; };
+		823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE031B4E2CF400E64BBB /* OrderViewCell.m */; };
+		823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */; };
+		82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */; };
+		82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */; };
+		82EDCA021CA172A800206EC8 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDCA011CA172A800206EC8 /* Vendor.m */; };
+		82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDCA041CA1752500206EC8 /* NSString+Validation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		823AEDED1B4E2B8500E64BBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 823AEDCB1B4E2B8500E64BBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 823AEDD21B4E2B8500E64BBB;
+			remoteInfo = "Chemist Plus Manager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neediator_Logo_Final.png; sourceTree = "<group>"; };
+		823AEDD31B4E2B8500E64BBB /* NPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		823AEDD71B4E2B8500E64BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		823AEDD81B4E2B8500E64BBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		823AEDDA1B4E2B8500E64BBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		823AEDE11B4E2B8500E64BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		823AEDE31B4E2B8500E64BBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		823AEDE61B4E2B8500E64BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		823AEDEC1B4E2B8500E64BBB /* NPartner.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NPartner.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		823AEDF11B4E2B8500E64BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		823AEDF21B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chemist_Plus_ManagerTests.m; sourceTree = "<group>"; };
+		823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListTableViewController.h; sourceTree = "<group>"; };
+		823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListTableViewController.m; sourceTree = "<group>"; };
+		823AEE021B4E2CF400E64BBB /* OrderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewCell.h; sourceTree = "<group>"; };
+		823AEE031B4E2CF400E64BBB /* OrderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewCell.m; sourceTree = "<group>"; };
+		823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
+		823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
+		82EB44D51CA2962C0031FF99 /* VendorAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorAccountViewController.h; sourceTree = "<group>"; };
+		82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorAccountViewController.m; sourceTree = "<group>"; };
+		82EDC9FD1CA170E800206EC8 /* VendorLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VendorLoginViewController.h; path = ../VendorLoginViewController.h; sourceTree = "<group>"; };
+		82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VendorLoginViewController.m; path = ../VendorLoginViewController.m; sourceTree = "<group>"; };
+		82EDCA001CA172A800206EC8 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
+		82EDCA011CA172A800206EC8 /* Vendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vendor.m; sourceTree = "<group>"; };
+		82EDCA031CA1752500206EC8 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		82EDCA041CA1752500206EC8 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		823AEDD01B4E2B8500E64BBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823AEDE91B4E2B8500E64BBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		823AEDCA1B4E2B8500E64BBB = {
+			isa = PBXGroup;
+			children = (
+				823AEDD51B4E2B8500E64BBB /* Chemist Plus Manager */,
+				823AEDEF1B4E2B8500E64BBB /* Chemist Plus ManagerTests */,
+				823AEDD41B4E2B8500E64BBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		823AEDD41B4E2B8500E64BBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				823AEDD31B4E2B8500E64BBB /* NPartner.app */,
+				823AEDEC1B4E2B8500E64BBB /* NPartner.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		823AEDD51B4E2B8500E64BBB /* Chemist Plus Manager */ = {
+			isa = PBXGroup;
+			children = (
+				823AEDDA1B4E2B8500E64BBB /* AppDelegate.h */,
+				823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */,
+				82EB44D51CA2962C0031FF99 /* VendorAccountViewController.h */,
+				82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */,
+				82EDC9FD1CA170E800206EC8 /* VendorLoginViewController.h */,
+				82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */,
+				823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */,
+				823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */,
+				823AEE021B4E2CF400E64BBB /* OrderViewCell.h */,
+				823AEE031B4E2CF400E64BBB /* OrderViewCell.m */,
+				823AEDE01B4E2B8500E64BBB /* Main.storyboard */,
+				823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */,
+				823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */,
+				678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */,
+				82EDCA001CA172A800206EC8 /* Vendor.h */,
+				82EDCA011CA172A800206EC8 /* Vendor.m */,
+				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
+				823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */,
+				823AEDD61B4E2B8500E64BBB /* Supporting Files */,
+				82EDCA031CA1752500206EC8 /* NSString+Validation.h */,
+				82EDCA041CA1752500206EC8 /* NSString+Validation.m */,
+			);
+			path = "Chemist Plus Manager";
+			sourceTree = "<group>";
+		};
+		823AEDD61B4E2B8500E64BBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				823AEDD71B4E2B8500E64BBB /* Info.plist */,
+				823AEDD81B4E2B8500E64BBB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		823AEDEF1B4E2B8500E64BBB /* Chemist Plus ManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				823AEDF21B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m */,
+				823AEDF01B4E2B8500E64BBB /* Supporting Files */,
+			);
+			path = "Chemist Plus ManagerTests";
+			sourceTree = "<group>";
+		};
+		823AEDF01B4E2B8500E64BBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				823AEDF11B4E2B8500E64BBB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		823AEDD21B4E2B8500E64BBB /* NPartner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 823AEDF61B4E2B8500E64BBB /* Build configuration list for PBXNativeTarget "NPartner" */;
+			buildPhases = (
+				823AEDCF1B4E2B8500E64BBB /* Sources */,
+				823AEDD01B4E2B8500E64BBB /* Frameworks */,
+				823AEDD11B4E2B8500E64BBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NPartner;
+			productName = "Chemist Plus Manager";
+			productReference = 823AEDD31B4E2B8500E64BBB /* NPartner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		823AEDEB1B4E2B8500E64BBB /* NPartnerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 823AEDF91B4E2B8500E64BBB /* Build configuration list for PBXNativeTarget "NPartnerTests" */;
+			buildPhases = (
+				823AEDE81B4E2B8500E64BBB /* Sources */,
+				823AEDE91B4E2B8500E64BBB /* Frameworks */,
+				823AEDEA1B4E2B8500E64BBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				823AEDEE1B4E2B8500E64BBB /* PBXTargetDependency */,
+			);
+			name = NPartnerTests;
+			productName = "Chemist Plus ManagerTests";
+			productReference = 823AEDEC1B4E2B8500E64BBB /* NPartner.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		823AEDCB1B4E2B8500E64BBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = adverto;
+				TargetAttributes = {
+					823AEDD21B4E2B8500E64BBB = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					823AEDEB1B4E2B8500E64BBB = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 823AEDD21B4E2B8500E64BBB;
+					};
+				};
+			};
+			buildConfigurationList = 823AEDCE1B4E2B8500E64BBB /* Build configuration list for PBXProject "NPartner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 823AEDCA1B4E2B8500E64BBB;
+			productRefGroup = 823AEDD41B4E2B8500E64BBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				823AEDD21B4E2B8500E64BBB /* NPartner */,
+				823AEDEB1B4E2B8500E64BBB /* NPartnerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		823AEDD11B4E2B8500E64BBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */,
+				823AEDE71B4E2B8500E64BBB /* LaunchScreen.xib in Resources */,
+				823AEDE41B4E2B8500E64BBB /* Images.xcassets in Resources */,
+				678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823AEDEA1B4E2B8500E64BBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		823AEDCF1B4E2B8500E64BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */,
+				823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */,
+				82EDCA021CA172A800206EC8 /* Vendor.m in Sources */,
+				823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */,
+				823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */,
+				82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */,
+				82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */,
+				82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */,
+				823AEDD91B4E2B8500E64BBB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823AEDE81B4E2B8500E64BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823AEDF31B4E2B8500E64BBB /* Chemist_Plus_ManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		823AEDEE1B4E2B8500E64BBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 823AEDD21B4E2B8500E64BBB /* NPartner */;
+			targetProxy = 823AEDED1B4E2B8500E64BBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		823AEDE01B4E2B8500E64BBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823AEDE11B4E2B8500E64BBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823AEDE61B4E2B8500E64BBB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		823AEDF41B4E2B8500E64BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		823AEDF51B4E2B8500E64BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		823AEDF71B4E2B8500E64BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Chemist Plus Manager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.advertotechnology.neediatorPartner;
+				PRODUCT_NAME = NPartner;
+			};
+			name = Debug;
+		};
+		823AEDF81B4E2B8500E64BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Chemist Plus Manager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.advertotechnology.neediatorPartner;
+				PRODUCT_NAME = NPartner;
+			};
+			name = Release;
+		};
+		823AEDFA1B4E2B8500E64BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Chemist Plus ManagerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = NPartner;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPartner.app/NPartner";
+			};
+			name = Debug;
+		};
+		823AEDFB1B4E2B8500E64BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Chemist Plus ManagerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = NPartner;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPartner.app/NPartner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		823AEDCE1B4E2B8500E64BBB /* Build configuration list for PBXProject "NPartner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823AEDF41B4E2B8500E64BBB /* Debug */,
+				823AEDF51B4E2B8500E64BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		823AEDF61B4E2B8500E64BBB /* Build configuration list for PBXNativeTarget "NPartner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823AEDF71B4E2B8500E64BBB /* Debug */,
+				823AEDF81B4E2B8500E64BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		823AEDF91B4E2B8500E64BBB /* Build configuration list for PBXNativeTarget "NPartnerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823AEDFA1B4E2B8500E64BBB /* Debug */,
+				823AEDFB1B4E2B8500E64BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 823AEDCB1B4E2B8500E64BBB /* Project object */;
+}
