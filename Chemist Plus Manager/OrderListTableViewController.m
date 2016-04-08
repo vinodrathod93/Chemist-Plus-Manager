@@ -21,14 +21,15 @@
 @property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @property (retain) NSMutableDictionary *tableViewCells;
-@property (retain) NSMutableArray *tableViewSections;
+//@property (retain) NSMutableArray *tableViewSections;
 
 @property (nonatomic, assign) BOOL didViewLoadedFirstTime;
 
 @end
 
 NSString * const CELL_IDENTIFIER = @"ordersCell";
-NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vendordashboard";
+NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vendor_dashboard";
+
 
 
 @implementation OrderListTableViewController
@@ -39,23 +40,7 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
     self.didViewLoadedFirstTime = YES;
     
 
-    
-    Vendor *savedVendor = [Vendor savedVendor];
-    
-    if (savedVendor != nil) {
-        NSLog(@"Nothing");
-        
-        
-            [self fetchDataAndUpdateTableView:savedVendor.vendorID];
-        
-    }
-    else {
-        
-        VendorLoginViewController *vendorLoginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"vendorLoginVC"];
-        [self presentViewController:vendorLoginVC animated:YES completion:nil];
-    }
-    
-    
+    [self checkVendorLogin];
     
 }
 
@@ -71,6 +56,12 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
 
 - (IBAction)refreshOrders:(id)sender {
     
+    [self checkVendorLogin];
+}
+
+
+- (void)checkVendorLogin {
+    
     Vendor *savedVendor = [Vendor savedVendor];
     
     if (savedVendor != nil) {
@@ -81,17 +72,25 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
         
     }
     else {
+        [self presentLoginPage];
         
-        VendorLoginViewController *vendorLoginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"vendorLoginVC"];
-        [self presentViewController:vendorLoginVC animated:YES completion:nil];
     }
+
+    
 }
+
+
+-(void)presentLoginPage {
+    VendorLoginViewController *vendorLoginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"vendorLoginVC"];
+    [self presentViewController:vendorLoginVC animated:YES completion:nil];
+}
+
 
 -(void)fetchDataAndUpdateTableView:(NSString *)vendorID {
     [self loadActivityIndicator];
     
     
-    NSString *loginURL = [NSString stringWithFormat:@"%@?user_id=%@", JSON_DATA_URL, vendorID];
+    NSString *loginURL = [NSString stringWithFormat:@"%@?user_id=%@&status_id=%@", JSON_DATA_URL, vendorID, @"1"];
     
     NSURL *url = [NSURL URLWithString:loginURL];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -108,26 +107,33 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
         
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
         
-        if (error != nil) {
-            NSLog(@"Error %@",error);
-        }
-        else {
+        
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
-             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                 
-                 self.pendingArray = [json objectForKey:@"Orders"][0][@"pending_list"];
-                 
-                 [self.activityIndicator stopAnimating];
-                 self.activityIndicator.hidden = YES;
-                 [self.overlayView removeFromSuperview];
-                 
-                 [self setupDataSourceForSection:[self loadOrderDates]];
-                 
-                 [self.tableView reloadData];
-                 
-             }];
             
-        }
+            if (error != nil) {
+                loge(error);
+            }
+            else {
+                
+                self.pendingArray = [json objectForKey:@"Orders"][0][@"Orderdetails"];
+                
+                [self.activityIndicator stopAnimating];
+                self.activityIndicator.hidden = YES;
+                [self.overlayView removeFromSuperview];
+                
+                [self setupDataSourceForSection:[self loadOrderDates]];
+                
+                [self.tableView reloadData];
+                
+            }
+            
+            
+        }];
+        
+        
+        
         
     }];
     
@@ -142,20 +148,20 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return self.tableViewSections.count;
+    return self.tableViewCells.count;
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    id key = [self.tableViewSections objectAtIndex:section];
-    NSArray *tableViewCellsForSection = [self.tableViewCells objectForKey:key];
-    return tableViewCellsForSection.count;
+    NSArray *cells = [self.tableViewCells allValues][section];
+    return cells.count;
 
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [self.tableViewSections objectAtIndex:section];
+    
+    return [self.tableViewCells allKeys][section];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -223,14 +229,12 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
 
 -(void)setupDataSourceForSection:(NSArray *)sortedDateArray {
     
-    NSLog(@"%@",sortedDateArray);
+    logm(sortedDateArray);
+    logm(@"Sorted Date......");
     self.tableViewCells = [NSMutableDictionary dictionaryWithCapacity:0];
-    self.tableViewSections = [NSMutableArray arrayWithCapacity:0];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [NSLocale currentLocale];
-    dateFormatter.timeZone = calendar.timeZone;
     [dateFormatter setDateFormat:@"EE, d LLLL yyyy"];
     
     NSUInteger dateComponents = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
@@ -243,38 +247,50 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
     
     for (NSDate* date in sortedDateArray)
     {
+        tableviewCellsForSection = [NSMutableArray arrayWithCapacity:0];
+        
         NSDateComponents* components = [calendar components:dateComponents fromDate:date];
         NSInteger year = [components year];
         NSInteger month = [components month];
         NSInteger day = [components day];
         if (year != previousYear || month != previousMonth || day != previousDay)
         {
+            
+            
             NSString *sectionHeading = [dateFormatter stringFromDate:date];
-            [self.tableViewSections addObject:sectionHeading];
-            tableviewCellsForSection = [NSMutableArray arrayWithCapacity:0];
             [self.tableViewCells setObject:tableviewCellsForSection forKey:sectionHeading];
             previousDay = day;
             previousYear = year;
             previousMonth = month;
         }
         [tableviewCellsForSection addObject:date];
+        
+        logm(tableviewCellsForSection);
     }
     
-    NSLog(@"%@",self.tableViewCells);
+    logm(self.tableViewCells);
 }
 
 
 
 -(NSArray *)loadOrderDates {
+    
+    
+    
+    
+    
     NSMutableArray *allDates = [[NSMutableArray alloc] init];
     
     for (NSArray *order in self.pendingArray) {
         NSString *dateString = [order valueForKey:@"OrderDate"];
-        NSDate *order_date = [self convertToDateFromString:dateString];
+        NSDate *order_date = JSDateToNSDate(dateString);
+        
+        logm([NSString stringWithFormat:@"%@ to %@", dateString, order_date]);
         
         [allDates addObject:order_date];
     }
-    NSLog(@"%@",allDates);
+    logm(allDates);
+    logm(@"Dates ....");
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"self" ascending:NO];
     NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
@@ -282,13 +298,7 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
     return [allDates sortedArrayUsingDescriptors:descriptors];
 }
 
--(NSDate *)convertToDateFromString:(NSString *)string {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"dd/MM/yyyy hh:mm:ss"];
-    NSDate *convertDate = [dateFormat dateFromString:string];
-    
-    return convertDate;
-}
+
 
 -(void)loadActivityIndicator {
     self.overlayView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];

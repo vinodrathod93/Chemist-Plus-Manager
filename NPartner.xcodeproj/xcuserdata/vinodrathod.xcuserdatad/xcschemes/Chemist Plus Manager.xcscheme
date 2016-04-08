@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-               BuildableName = "Chemist Plus Manager.app"
-               BlueprintName = "Chemist Plus Manager"
-               ReferencedContainer = "container:Chemist Plus Manager.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -28,24 +12,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "823AEDEB1B4E2B8500E64BBB"
-               BuildableName = "Chemist Plus ManagerTests.xctest"
-               BlueprintName = "Chemist Plus ManagerTests"
-               ReferencedContainer = "container:Chemist Plus Manager.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-            BuildableName = "Chemist Plus Manager.app"
-            BlueprintName = "Chemist Plus Manager"
-            ReferencedContainer = "container:Chemist Plus Manager.xcodeproj">
+            BuildableName = "NPartner.app"
+            BlueprintName = "NPartner"
+            ReferencedContainer = "container:NPartner.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +40,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-            BuildableName = "Chemist Plus Manager.app"
-            BlueprintName = "Chemist Plus Manager"
-            ReferencedContainer = "container:Chemist Plus Manager.xcodeproj">
+            BuildableName = "NPartner.app"
+            BlueprintName = "NPartner"
+            ReferencedContainer = "container:NPartner.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,16 +54,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-            BuildableName = "Chemist Plus Manager.app"
-            BlueprintName = "Chemist Plus Manager"
-            ReferencedContainer = "container:Chemist Plus Manager.xcodeproj">
+            BuildableName = "NPartner.app"
+            BlueprintName = "NPartner"
+            ReferencedContainer = "container:NPartner.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
