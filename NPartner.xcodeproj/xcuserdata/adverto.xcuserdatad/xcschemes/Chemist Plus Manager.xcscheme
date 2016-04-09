@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-               BuildableName = "Neediator Partner.app"
+               BuildableName = "NPartner.app"
                BlueprintName = "NPartner"
                ReferencedContainer = "container:NPartner.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-            BuildableName = "Neediator Partner.app"
+            BuildableName = "NPartner.app"
             BlueprintName = "NPartner"
             ReferencedContainer = "container:NPartner.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-            BuildableName = "Neediator Partner.app"
+            BuildableName = "NPartner.app"
             BlueprintName = "NPartner"
             ReferencedContainer = "container:NPartner.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "823AEDD21B4E2B8500E64BBB"
-            BuildableName = "Neediator Partner.app"
+            BuildableName = "NPartner.app"
             BlueprintName = "NPartner"
             ReferencedContainer = "container:NPartner.xcodeproj">
          </BuildableReference>

@@ -257,14 +257,21 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
         {
             
             
-            NSString *sectionHeading = [dateFormatter stringFromDate:date];
-            [self.tableViewCells setObject:tableviewCellsForSection forKey:sectionHeading];
+           
             previousDay = day;
             previousYear = year;
             previousMonth = month;
+            
+            [tableviewCellsForSection addObject:date];
         }
-        [tableviewCellsForSection addObject:date];
         
+        
+        logm(self.tableViewCells);
+        
+        logm(@".......sections........");
+        
+        NSString *sectionHeading = [dateFormatter stringFromDate:date];
+        [self.tableViewCells setObject:tableviewCellsForSection forKey:sectionHeading];
         logm(tableviewCellsForSection);
     }
     

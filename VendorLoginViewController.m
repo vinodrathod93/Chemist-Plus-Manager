@@ -98,52 +98,54 @@ typedef void(^completion)(BOOL finished);
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        if (data != nil) {
+        
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSError *jsonError;
                 
+                if (data != nil) {
                 
-                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
-                [self hideHUD];
-                
-                if (jsonError) {
-                    NSLog(@"Error %@",[jsonError localizedDescription]);
-                } else {
+                    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&jsonError];
+                    [self hideHUD];
                     
-                    NSHTTPURLResponse *url_response = (NSHTTPURLResponse *)response;
-                    NSLog(@"Response %ld", (long)[url_response statusCode]);
-                    
-                    if ([[json valueForKey:@"isError"] boolValue] == true) {
-                        NSString *error = [json valueForKey:@"errors"];
+                    if (jsonError) {
+                        NSLog(@"Error %@",[jsonError localizedDescription]);
+                    } else {
                         
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [self alertWithTitle:@"Error" message:error];
-                        });
+                        NSHTTPURLResponse *url_response = (NSHTTPURLResponse *)response;
+                        NSLog(@"Response %ld", (long)[url_response statusCode]);
                         
-                        isLoggedIn(NO);
-                        
-                    } else if (url_response.statusCode == 200) {
-                        NSLog(@"JSON %@",json);
-                        
-                        NSArray *login     = [json valueForKey:@"signin"];
-                        NSDictionary *data = [login lastObject];
-                        
-                        Vendor *vendor              = [[Vendor alloc]init];
-                        vendor.vendorID             = [data valueForKey:@"id"];
-                        vendor.email              = [data valueForKey:@"username"];
-                        vendor.addresses          = [data objectForKey:@"addresslist"];
-                        
-                        [vendor save];
-                        
-                        isLoggedIn(YES);
+                        if ([[json valueForKey:@"isError"] boolValue] == true) {
+                            NSString *error = [json valueForKey:@"errors"];
+                            
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [self alertWithTitle:@"Error" message:error];
+                            });
+                            
+                            isLoggedIn(NO);
+                            
+                        } else if (url_response.statusCode == 200) {
+                            NSLog(@"JSON %@",json);
+                            
+                            NSArray *login     = [json valueForKey:@"signin"];
+                            NSDictionary *data = [login lastObject];
+                            
+                            Vendor *vendor              = [[Vendor alloc]init];
+                            vendor.vendorID             = [data valueForKey:@"id"];
+                            vendor.email              = [data valueForKey:@"username"];
+                            vendor.addresses          = [data objectForKey:@"addresslist"];
+                            
+                            [vendor save];
+                            
+                            isLoggedIn(YES);
+                        }
                     }
                 }
-                
+                else {
+                    [self displayConnectionFailed];
+                }
                 
             });
-        } else {
-            [self displayConnectionFailed];
-        }
+        
         
         
     }];
