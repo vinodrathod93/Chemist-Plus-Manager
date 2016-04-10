@@ -36,7 +36,7 @@ NSString * const CANCELLATION_WEBSERVICE_URL = @"http://neediator.in/vendor/vend
     NSLog(@"ViewDidLoad");
     self.view.backgroundColor = [UIColor whiteColor];
     self.customerName.text = self.customerNameString;
-    self.phoneNumber.text = self.phoneNumberString;
+    self.orderAmount.text = convertToRupees(self.amount);
     self.address.text = self.addressString;
     
     

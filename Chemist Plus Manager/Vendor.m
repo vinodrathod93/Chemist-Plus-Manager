@@ -19,9 +19,10 @@
     [encoder encodeObject:self.firstName forKey:@"FirstName"];
     [encoder encodeObject:self.lastName forKey:@"LastName"];
     [encoder encodeObject:self.email forKey:@"Email"];
-    [encoder encodeObject:self.fullName forKey:@"FullName"];
+    [encoder encodeObject:self.storeName forKey:@"StoreName"];
+    [encoder encodeObject:self.username forKey:@"UserName"];
     [encoder encodeObject:self.profilePic forKey:@"ProfilePicture"];
-    [encoder encodeObject:self.access_token forKey:@"AccessToken"];
+    [encoder encodeObject:self.workingHours forKey:@"WorkingHours"];
     [encoder encodeObject:self.default_country_id forKey:@"defaultCountry"];
     [encoder encodeObject:self.bill_address forKey:@"billAddress"];
     [encoder encodeObject:self.ship_address forKey:@"shipAddress"];
@@ -38,9 +39,10 @@
         _firstName      = [decoder decodeObjectForKey:@"FirstName"];
         _lastName       = [decoder decodeObjectForKey:@"LastName"];
         _email          = [decoder decodeObjectForKey:@"Email"];
-        _fullName       = [decoder decodeObjectForKey:@"FullName"];
+        _storeName       = [decoder decodeObjectForKey:@"StoreName"];
+        _username       = [decoder decodeObjectForKey:@"UserName"];
         _profilePic     = [decoder decodeObjectForKey:@"ProfilePicture"];
-        _access_token   = [decoder decodeObjectForKey:@"AccessToken"];
+        _workingHours   = [decoder decodeObjectForKey:@"WorkingHours"];
         _default_country_id = [decoder decodeObjectForKey:@"defaultCountry"];
         _bill_address       = [decoder decodeObjectForKey:@"billAddress"];
         _ship_address       = [decoder decodeObjectForKey:@"shipAddress"];

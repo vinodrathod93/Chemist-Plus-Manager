@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */; };
+		67E00C551CBAF5DC00D7AC8D /* VendorProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */; };
 		823AEDD91B4E2B8500E64BBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDD81B4E2B8500E64BBB /* main.m */; };
 		823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */; };
 		823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE01B4E2B8500E64BBB /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */; };
 		82EDCA021CA172A800206EC8 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDCA011CA172A800206EC8 /* Vendor.m */; };
 		82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EDCA041CA1752500206EC8 /* NSString+Validation.m */; };
+		91A9A5BCB5A7E811FC62D7B8 /* libPods-NPartner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 577285E89B2642BFABC0D77C /* libPods-NPartner.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22F3857ABB6E69735D54F979 /* Pods-NPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPartner.release.xcconfig"; path = "Pods/Target Support Files/Pods-NPartner/Pods-NPartner.release.xcconfig"; sourceTree = "<group>"; };
+		577285E89B2642BFABC0D77C /* libPods-NPartner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NPartner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675A77791CB83405002E634D /* NeediatorHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeediatorHelper.h; sourceTree = "<group>"; };
 		675A777A1CB83405002E634D /* NPartner.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NPartner.pch; sourceTree = "<group>"; };
 		678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neediator_Logo_Final.png; sourceTree = "<group>"; };
+		67E00C531CBAF5DC00D7AC8D /* VendorProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorProfileViewCell.h; sourceTree = "<group>"; };
+		67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorProfileViewCell.m; sourceTree = "<group>"; };
 		823AEDD31B4E2B8500E64BBB /* NPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823AEDD71B4E2B8500E64BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823AEDD81B4E2B8500E64BBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 		82EDCA011CA172A800206EC8 /* Vendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vendor.m; sourceTree = "<group>"; };
 		82EDCA031CA1752500206EC8 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
 		82EDCA041CA1752500206EC8 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
+		D70F7B0D9F18EF9FDD1085E2 /* Pods-NPartner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NPartner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NPartner/Pods-NPartner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A9A5BCB5A7E811FC62D7B8 /* libPods-NPartner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BC6A6040D31D6F959F037A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				577285E89B2642BFABC0D77C /* libPods-NPartner.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		823AEDCA1B4E2B8500E64BBB = {
 			isa = PBXGroup;
 			children = (
 				823AEDD51B4E2B8500E64BBB /* Chemist Plus Manager */,
 				823AEDEF1B4E2B8500E64BBB /* Chemist Plus ManagerTests */,
 				823AEDD41B4E2B8500E64BBB /* Products */,
+				C26DC1A85810FF76D7458F9A /* Pods */,
+				7BC6A6040D31D6F959F037A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +129,8 @@
 				82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */,
 				823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */,
 				823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */,
+				67E00C531CBAF5DC00D7AC8D /* VendorProfileViewCell.h */,
+				67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */,
 				823AEE021B4E2CF400E64BBB /* OrderViewCell.h */,
 				823AEE031B4E2CF400E64BBB /* OrderViewCell.m */,
 				823AEDE01B4E2B8500E64BBB /* Main.storyboard */,
@@ -156,6 +176,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C26DC1A85810FF76D7458F9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D70F7B0D9F18EF9FDD1085E2 /* Pods-NPartner.debug.xcconfig */,
+				22F3857ABB6E69735D54F979 /* Pods-NPartner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 823AEDF61B4E2B8500E64BBB /* Build configuration list for PBXNativeTarget "NPartner" */;
 			buildPhases = (
+				71B0289E5096ECB5771A5A98 /* Check Pods Manifest.lock */,
 				823AEDCF1B4E2B8500E64BBB /* Sources */,
 				823AEDD01B4E2B8500E64BBB /* Frameworks */,
 				823AEDD11B4E2B8500E64BBB /* Resources */,
+				C9A359C7909063AFEBA48CD4 /* Embed Pods Frameworks */,
+				7D456D65E080DDFAB8254CDB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +237,7 @@
 				TargetAttributes = {
 					823AEDD21B4E2B8500E64BBB = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KMK576W42B;
 					};
 					823AEDEB1B4E2B8500E64BBB = {
 						CreatedOnToolsVersion = 6.4;
@@ -252,6 +285,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71B0289E5096ECB5771A5A98 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7D456D65E080DDFAB8254CDB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPartner/Pods-NPartner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9A359C7909063AFEBA48CD4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NPartner/Pods-NPartner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		823AEDCF1B4E2B8500E64BBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +342,7 @@
 				823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */,
 				82EDCA021CA172A800206EC8 /* Vendor.m in Sources */,
 				823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */,
+				67E00C551CBAF5DC00D7AC8D /* VendorProfileViewCell.m in Sources */,
 				823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */,
 				82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */,
 				82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */,
@@ -324,7 +406,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kanhaiya gupta (KMK576W42B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kanhaiya gupta (KMK576W42B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -367,7 +450,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kanhaiya gupta (KMK576W42B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: kanhaiya gupta (KMK576W42B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -389,9 +473,10 @@
 		};
 		823AEDF71B4E2B8500E64BBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D70F7B0D9F18EF9FDD1085E2 /* Pods-NPartner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kanhaiya gupta (KMK576W42B)";
 				GCC_PREFIX_HEADER = "Chemist Plus Manager/NPartner.pch";
 				INFOPLIST_FILE = "Chemist Plus Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -402,8 +487,10 @@
 		};
 		823AEDF81B4E2B8500E64BBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22F3857ABB6E69735D54F979 /* Pods-NPartner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: kanhaiya gupta (KMK576W42B)";
 				GCC_PREFIX_HEADER = "Chemist Plus Manager/NPartner.pch";
 				INFOPLIST_FILE = "Chemist Plus Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

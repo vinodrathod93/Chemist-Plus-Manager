@@ -69,6 +69,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "NPartner"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

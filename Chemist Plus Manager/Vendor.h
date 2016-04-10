@@ -13,10 +13,11 @@
 @property (nonatomic, copy) NSString *vendorID;
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
-@property (nonatomic, copy) NSString *fullName;
+@property (nonatomic, copy) NSString *storeName;
+@property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *profilePic;
-@property (nonatomic, copy) NSString *access_token;
+@property (nonatomic, copy) NSString *workingHours;
 @property (nonatomic, copy) NSString *default_country_id;
 @property (nonatomic, copy) NSDictionary *bill_address;
 @property (nonatomic, copy) NSDictionary *ship_address;

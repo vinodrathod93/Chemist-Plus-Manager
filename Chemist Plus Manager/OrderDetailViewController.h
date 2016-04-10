@@ -12,11 +12,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *customerName;
 @property (weak, nonatomic) IBOutlet UIImageView *prescriptionImage;
-@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+@property (weak, nonatomic) IBOutlet UILabel *orderAmount;
 @property (weak, nonatomic) IBOutlet UILabel *address;
 
 @property (strong, nonatomic) NSString *customerNameString;
-@property (strong, nonatomic) NSString *phoneNumberString;
+@property (assign, nonatomic) NSInteger amount;
 @property (strong, nonatomic) NSString *addressString;
 @property (strong, nonatomic) NSString *imageString;
 @property (strong, nonatomic) NSString *orderIDString;

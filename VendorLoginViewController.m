@@ -58,6 +58,8 @@ typedef void(^completion)(BOOL finished);
                     
                     NSLog(@"Logged In");
                     
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedInRefreshOrderNotification" object:nil];
+                    
                 }];
                 
             } else
@@ -124,14 +126,17 @@ typedef void(^completion)(BOOL finished);
                             isLoggedIn(NO);
                             
                         } else if (url_response.statusCode == 200) {
-                            NSLog(@"JSON %@",json);
+//                            NSLog(@"JSON %@",json);
                             
                             NSArray *login     = [json valueForKey:@"signin"];
                             NSDictionary *data = [login lastObject];
                             
                             Vendor *vendor              = [[Vendor alloc]init];
                             vendor.vendorID             = [data valueForKey:@"id"];
-                            vendor.email              = [data valueForKey:@"username"];
+                            vendor.username              = [data valueForKey:@"username"];
+                            vendor.storeName            = [[data valueForKey:@"name"] capitalizedString];
+                            vendor.workingHours         = [data valueForKey:@"working_hours"];
+                            vendor.profilePic           = [data valueForKey:@"imageUrl"];
                             vendor.addresses          = [data objectForKey:@"addresslist"];
                             
                             [vendor save];

@@ -10,6 +10,8 @@
 #define NeediatorHelper_h
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "VendorLoginViewController.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
@@ -41,6 +43,22 @@ static NSDate *JSDateToNSDate(NSString *dateTimeString) {
     NSDate *convertDate = [dateFormat dateFromString:dateTimeString];
     
     return convertDate;
+}
+
+static NSString *convertToRupees(NSInteger amount) {
+    NSNumberFormatter *headerCurrencyFormatter = [[NSNumberFormatter alloc] init];
+    [headerCurrencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [headerCurrencyFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_IN"]];
+    
+    return [headerCurrencyFormatter stringFromNumber:@(amount)];
+}
+
+static void showLoginPageOn(UIViewController *view) {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
+                                                             bundle: nil];
+    VendorLoginViewController *vendorLoginVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"vendorLoginVC"];
+    [view presentViewController:vendorLoginVC animated:YES completion:nil];
 }
 
 #endif /* NeediatorHelper_h */
