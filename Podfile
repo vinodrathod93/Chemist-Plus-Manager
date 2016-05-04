@@ -5,6 +5,8 @@
 
 target 'NPartner' do
 pod 'SDWebImage', '~>3.7'
+pod 'SWRevealViewController', '~> 2.3'
+pod 'AFNetworking'
 end
 
 target 'NPartnerTests' do

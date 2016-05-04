@@ -11,6 +11,7 @@
 #import "OrderViewCell.h"
 #import "Vendor.h"
 #import "VendorLoginViewController.h"
+#import <SWRevealViewController/SWRevealViewController.h>
 
 @interface OrderListTableViewController ()
 
@@ -45,6 +46,14 @@ NSString * const JSON_DATA_URL = @"http://neediator.in/vendor/vendorWS.asmx/vend
 
     [self checkVendorLogin];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkVendorLogin) name:@"loggedInRefreshOrderNotification" object:nil];
+    
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if (revealViewController) {
+        [self.menuButton setTarget: self.revealViewController];
+        [self.menuButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
     
 }
 

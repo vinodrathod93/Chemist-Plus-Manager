@@ -184,7 +184,7 @@ typedef void(^completion)(BOOL finished);
 -(void)displayConnectionFailed {
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        [self showHUD];
+        [self hideHUD];
         UIAlertView *failed_alert = [[UIAlertView alloc]initWithTitle:@"Network Error" message:@"The Internet Connection Seems to be not available, error while connecting" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         
         [failed_alert show];

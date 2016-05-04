@@ -11,4 +11,5 @@
 @interface VendorAccountViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *myAccountMenuButton;
 @end

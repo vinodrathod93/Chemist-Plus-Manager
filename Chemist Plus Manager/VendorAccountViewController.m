@@ -8,6 +8,7 @@
 
 #import "VendorAccountViewController.h"
 #import "VendorProfileViewCell.h"
+#import <SWRevealViewController/SWRevealViewController.h>
 
 @interface VendorAccountViewController ()
 {
@@ -30,6 +31,13 @@ enum MyAccountCells {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if (revealViewController) {
+        [self.myAccountMenuButton setTarget: self.revealViewController];
+        [self.myAccountMenuButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {

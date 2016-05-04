@@ -13,4 +13,5 @@ extern NSString * const JSON_DATA_URL;
 
 @interface OrderListTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @end
