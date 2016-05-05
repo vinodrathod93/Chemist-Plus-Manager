@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */; };
 		67E00C551CBAF5DC00D7AC8D /* VendorProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */; };
+		821C8C921CDB44EF008FD978 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C911CDB44EF008FD978 /* DashboardViewController.m */; };
+		821C8C951CDB4917008FD978 /* DashboardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C941CDB4917008FD978 /* DashboardCollectionViewCell.m */; };
+		821C8C981CDB4993008FD978 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C971CDB4993008FD978 /* iCarousel.m */; };
+		821C8C9B1CDB8282008FD978 /* DashboardFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C9A1CDB8282008FD978 /* DashboardFlowLayout.m */; };
 		823AEDD91B4E2B8500E64BBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDD81B4E2B8500E64BBB /* main.m */; };
 		823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */; };
 		823AEDE21B4E2B8500E64BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823AEDE01B4E2B8500E64BBB /* Main.storyboard */; };
@@ -44,6 +48,14 @@
 		678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neediator_Logo_Final.png; sourceTree = "<group>"; };
 		67E00C531CBAF5DC00D7AC8D /* VendorProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorProfileViewCell.h; sourceTree = "<group>"; };
 		67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorProfileViewCell.m; sourceTree = "<group>"; };
+		821C8C901CDB44EF008FD978 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
+		821C8C911CDB44EF008FD978 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
+		821C8C931CDB4917008FD978 /* DashboardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardCollectionViewCell.h; sourceTree = "<group>"; };
+		821C8C941CDB4917008FD978 /* DashboardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardCollectionViewCell.m; sourceTree = "<group>"; };
+		821C8C961CDB4993008FD978 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		821C8C971CDB4993008FD978 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		821C8C991CDB8282008FD978 /* DashboardFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardFlowLayout.h; sourceTree = "<group>"; };
+		821C8C9A1CDB8282008FD978 /* DashboardFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardFlowLayout.m; sourceTree = "<group>"; };
 		823AEDD31B4E2B8500E64BBB /* NPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		823AEDD71B4E2B8500E64BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823AEDD81B4E2B8500E64BBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +113,75 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		821C8C891CDB338D008FD978 /* Side Bar */ = {
+			isa = PBXGroup;
+			children = (
+				82A7672F1CDA1CA000179B2B /* SideBarViewController.h */,
+				82A767301CDA1CA000179B2B /* SideBarViewController.m */,
+			);
+			name = "Side Bar";
+			sourceTree = "<group>";
+		};
+		821C8C8A1CDB339B008FD978 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82EDCA001CA172A800206EC8 /* Vendor.h */,
+				82EDCA011CA172A800206EC8 /* Vendor.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		821C8C8B1CDB33CC008FD978 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				67E00C531CBAF5DC00D7AC8D /* VendorProfileViewCell.h */,
+				67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */,
+				823AEE021B4E2CF400E64BBB /* OrderViewCell.h */,
+				823AEE031B4E2CF400E64BBB /* OrderViewCell.m */,
+				821C8C991CDB8282008FD978 /* DashboardFlowLayout.h */,
+				821C8C9A1CDB8282008FD978 /* DashboardFlowLayout.m */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		821C8C8C1CDB33EB008FD978 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				82EDC9FD1CA170E800206EC8 /* VendorLoginViewController.h */,
+				82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		821C8C8D1CDB33F3008FD978 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */,
+				823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */,
+				823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */,
+				823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		821C8C8E1CDB33FC008FD978 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				82EB44D51CA2962C0031FF99 /* VendorAccountViewController.h */,
+				82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		821C8C8F1CDB3422008FD978 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				82EDCA031CA1752500206EC8 /* NSString+Validation.h */,
+				82EDCA041CA1752500206EC8 /* NSString+Validation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		823AEDCA1B4E2B8500E64BBB = {
 			isa = PBXGroup;
 			children = (
@@ -126,30 +207,24 @@
 			children = (
 				823AEDDA1B4E2B8500E64BBB /* AppDelegate.h */,
 				823AEDDB1B4E2B8500E64BBB /* AppDelegate.m */,
-				82EB44D51CA2962C0031FF99 /* VendorAccountViewController.h */,
-				82EB44D61CA2962C0031FF99 /* VendorAccountViewController.m */,
-				82EDC9FD1CA170E800206EC8 /* VendorLoginViewController.h */,
-				82EDC9FE1CA170E800206EC8 /* VendorLoginViewController.m */,
-				823AEDFF1B4E2C4500E64BBB /* OrderListTableViewController.h */,
-				823AEE001B4E2C4500E64BBB /* OrderListTableViewController.m */,
-				67E00C531CBAF5DC00D7AC8D /* VendorProfileViewCell.h */,
-				67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */,
-				823AEE021B4E2CF400E64BBB /* OrderViewCell.h */,
-				823AEE031B4E2CF400E64BBB /* OrderViewCell.m */,
+				821C8C961CDB4993008FD978 /* iCarousel.h */,
+				821C8C971CDB4993008FD978 /* iCarousel.m */,
 				823AEDE01B4E2B8500E64BBB /* Main.storyboard */,
-				823AEE051B4E49D600E64BBB /* OrderDetailViewController.h */,
-				823AEE061B4E49D600E64BBB /* OrderDetailViewController.m */,
-				678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */,
-				82EDCA001CA172A800206EC8 /* Vendor.h */,
-				82EDCA011CA172A800206EC8 /* Vendor.m */,
-				675A77791CB83405002E634D /* NeediatorHelper.h */,
-				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
+				821C8C931CDB4917008FD978 /* DashboardCollectionViewCell.h */,
+				821C8C941CDB4917008FD978 /* DashboardCollectionViewCell.m */,
 				823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */,
-				82A7672F1CDA1CA000179B2B /* SideBarViewController.h */,
-				82A767301CDA1CA000179B2B /* SideBarViewController.m */,
+				821C8C8E1CDB33FC008FD978 /* Account */,
+				821C8C8C1CDB33EB008FD978 /* Login */,
+				821C8C8D1CDB33F3008FD978 /* Orders */,
+				821C8C8B1CDB33CC008FD978 /* Custom Cells */,
+				821C8C8A1CDB339B008FD978 /* Models */,
+				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
+				821C8C891CDB338D008FD978 /* Side Bar */,
 				823AEDD61B4E2B8500E64BBB /* Supporting Files */,
-				82EDCA031CA1752500206EC8 /* NSString+Validation.h */,
-				82EDCA041CA1752500206EC8 /* NSString+Validation.m */,
+				821C8C8F1CDB3422008FD978 /* Categories */,
+				675A77791CB83405002E634D /* NeediatorHelper.h */,
+				821C8C901CDB44EF008FD978 /* DashboardViewController.h */,
+				821C8C911CDB44EF008FD978 /* DashboardViewController.m */,
 			);
 			path = "Chemist Plus Manager";
 			sourceTree = "<group>";
@@ -157,6 +232,7 @@
 		823AEDD61B4E2B8500E64BBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */,
 				675A777A1CB83405002E634D /* NPartner.pch */,
 				823AEDD71B4E2B8500E64BBB /* Info.plist */,
 				823AEDD81B4E2B8500E64BBB /* main.m */,
@@ -344,12 +420,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				823AEDDC1B4E2B8500E64BBB /* AppDelegate.m in Sources */,
+				821C8C951CDB4917008FD978 /* DashboardCollectionViewCell.m in Sources */,
 				823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */,
 				82A767311CDA1CA000179B2B /* SideBarViewController.m in Sources */,
 				82EDCA021CA172A800206EC8 /* Vendor.m in Sources */,
+				821C8C981CDB4993008FD978 /* iCarousel.m in Sources */,
 				823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */,
 				67E00C551CBAF5DC00D7AC8D /* VendorProfileViewCell.m in Sources */,
+				821C8C9B1CDB8282008FD978 /* DashboardFlowLayout.m in Sources */,
 				823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */,
+				821C8C921CDB44EF008FD978 /* DashboardViewController.m in Sources */,
 				82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */,
 				82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */,
 				82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */,
