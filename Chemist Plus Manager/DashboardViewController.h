@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 #import "DashboardFlowLayout.h"
+#import "DashboardCollectionViewCell.h"
+#import <SWRevealViewController/SWRevealViewController.h>
 
-@interface DashboardViewController : UIViewController<iCarouselDelegate, iCarouselDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource>
+@interface DashboardViewController : UIViewController<iCarouselDelegate, iCarouselDataSource, UICollectionViewDataSource, CollectionCellDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

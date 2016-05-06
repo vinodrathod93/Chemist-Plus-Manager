@@ -7,12 +7,13 @@
 //
 
 #import "DashboardViewController.h"
-#import "DashboardCollectionViewCell.h"
-#import <SWRevealViewController/SWRevealViewController.h>
+
 
 @interface DashboardViewController ()
 
 @property (nonatomic, strong) NSArray *profileImages;
+@property (nonatomic, strong) NSDictionary *dashboardData;
+
 @end
 
 @implementation DashboardViewController
@@ -21,6 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
@@ -37,6 +41,29 @@
                           @"http://g-ecx.images-amazon.com/images/G/31/img15/softlines/apparel/201512/GW/New-GW-Hero-1._UX1500_SX1500_CB301105718_.jpg",
                           @"http://img5a.flixcart.com/www/promos/new/20151229_193348_730x300_image-730-300-8.jpg",
                           @"http://img5a.flixcart.com/www/promos/new/20151228_231438_730x300_image-730-300-15.jpg"];
+    
+    _dashboardData = @{
+                       @"Account Details" : @[
+                               @"Rent Paid Upto",
+                               @"Membership Valid Upto"],
+                       @"Orders Summary" : @[
+                               @"Pending",
+                               @"Approved",
+                               @"Ready",
+                               @"Out for Delivery",
+                               @"Completed",
+                               @"Cancelled",
+                               @"Returned"],
+                       @"Products Summary" : @[
+                               @"Items Sold",
+                               @"Items Listed"],
+                       @"Ledger" : @[
+                               ],
+                       @"Leaderboard" : @[
+                               @"1. Brian W. Kernighan",
+                               @"2. Dennis M. Ritchie",
+                               @"3. Sigmund Freud"]
+                       };
     
     
     [self.carousel reloadData];
@@ -113,16 +140,30 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 6;
+    return _dashboardData.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     DashboardCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dashboardCollectionViewCell" forIndexPath:indexPath];
     
+//    cell
+    
+    NSString *key = [[_dashboardData allKeys] objectAtIndex:indexPath.item];
+    cell.headerLabel.text = key;
+    cell.cellData = [_dashboardData objectForKey:key];
+    
+    cell.delegate = self;
+    cell.tag = indexPath.item;
+    [cell.tableView reloadData];
     
     return cell;
     
+}
+
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -132,27 +173,13 @@
 
 
 
-
-
-#pragma mark -
-#pragma mark - UITableview Methods
-
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+-(void)tableCellDidSelect:(UITableViewCell *)cell {
+    NSLog(@"Selected Cell is %@", cell.textLabel.text);
 }
 
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
-}
 
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"dashboardTableViewCell" forIndexPath:indexPath];
-    
-    return cell;
-}
 
 
 @end

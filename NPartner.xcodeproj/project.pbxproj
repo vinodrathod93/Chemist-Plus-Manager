@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		678B21CB1CA08D69002DA7C6 /* Neediator_Logo_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */; };
 		67E00C551CBAF5DC00D7AC8D /* VendorProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */; };
+		82071D911CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82071D901CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.m */; };
+		82071D941CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82071D931CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.m */; };
+		82071D991CDCB5BA00EBF9A7 /* SideBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82071D981CDCB5BA00EBF9A7 /* SideBarModel.m */; };
+		82071D9C1CDCBCA200EBF9A7 /* SideBarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82071D9B1CDCBCA200EBF9A7 /* SideBarTableViewCell.m */; };
+		82071D9F1CDCC9AF00EBF9A7 /* PartnerAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82071D9E1CDCC9AF00EBF9A7 /* PartnerAccountCell.m */; };
 		821C8C921CDB44EF008FD978 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C911CDB44EF008FD978 /* DashboardViewController.m */; };
 		821C8C951CDB4917008FD978 /* DashboardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C941CDB4917008FD978 /* DashboardCollectionViewCell.m */; };
 		821C8C981CDB4993008FD978 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C8C971CDB4993008FD978 /* iCarousel.m */; };
@@ -48,6 +53,16 @@
 		678B21CA1CA08D69002DA7C6 /* Neediator_Logo_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neediator_Logo_Final.png; sourceTree = "<group>"; };
 		67E00C531CBAF5DC00D7AC8D /* VendorProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorProfileViewCell.h; sourceTree = "<group>"; };
 		67E00C541CBAF5DC00D7AC8D /* VendorProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorProfileViewCell.m; sourceTree = "<group>"; };
+		82071D8F1CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersRequestCollectionViewController.h; sourceTree = "<group>"; };
+		82071D901CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersRequestCollectionViewController.m; sourceTree = "<group>"; };
+		82071D921CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersRequestCollectionViewCell.h; sourceTree = "<group>"; };
+		82071D931CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersRequestCollectionViewCell.m; sourceTree = "<group>"; };
+		82071D971CDCB5BA00EBF9A7 /* SideBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarModel.h; sourceTree = "<group>"; };
+		82071D981CDCB5BA00EBF9A7 /* SideBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarModel.m; sourceTree = "<group>"; };
+		82071D9A1CDCBCA200EBF9A7 /* SideBarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewCell.h; sourceTree = "<group>"; };
+		82071D9B1CDCBCA200EBF9A7 /* SideBarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewCell.m; sourceTree = "<group>"; };
+		82071D9D1CDCC9AF00EBF9A7 /* PartnerAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnerAccountCell.h; sourceTree = "<group>"; };
+		82071D9E1CDCC9AF00EBF9A7 /* PartnerAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerAccountCell.m; sourceTree = "<group>"; };
 		821C8C901CDB44EF008FD978 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		821C8C911CDB44EF008FD978 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		821C8C931CDB4917008FD978 /* DashboardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardCollectionViewCell.h; sourceTree = "<group>"; };
@@ -113,6 +128,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		82071D951CDCB37700EBF9A7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				821C8C931CDB4917008FD978 /* DashboardCollectionViewCell.h */,
+				821C8C941CDB4917008FD978 /* DashboardCollectionViewCell.m */,
+				821C8C901CDB44EF008FD978 /* DashboardViewController.h */,
+				821C8C911CDB44EF008FD978 /* DashboardViewController.m */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		82071D961CDCB3AD00EBF9A7 /* Stages VC */ = {
+			isa = PBXGroup;
+			children = (
+				82071D921CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.h */,
+				82071D931CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.m */,
+				82071D8F1CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.h */,
+				82071D901CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.m */,
+			);
+			name = "Stages VC";
+			sourceTree = "<group>";
+		};
 		821C8C891CDB338D008FD978 /* Side Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +164,8 @@
 			children = (
 				82EDCA001CA172A800206EC8 /* Vendor.h */,
 				82EDCA011CA172A800206EC8 /* Vendor.m */,
+				82071D971CDCB5BA00EBF9A7 /* SideBarModel.h */,
+				82071D981CDCB5BA00EBF9A7 /* SideBarModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -210,21 +249,23 @@
 				821C8C961CDB4993008FD978 /* iCarousel.h */,
 				821C8C971CDB4993008FD978 /* iCarousel.m */,
 				823AEDE01B4E2B8500E64BBB /* Main.storyboard */,
-				821C8C931CDB4917008FD978 /* DashboardCollectionViewCell.h */,
-				821C8C941CDB4917008FD978 /* DashboardCollectionViewCell.m */,
-				823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */,
+				82071D9D1CDCC9AF00EBF9A7 /* PartnerAccountCell.h */,
+				82071D9E1CDCC9AF00EBF9A7 /* PartnerAccountCell.m */,
+				82071D9A1CDCBCA200EBF9A7 /* SideBarTableViewCell.h */,
+				82071D9B1CDCBCA200EBF9A7 /* SideBarTableViewCell.m */,
+				82071D961CDCB3AD00EBF9A7 /* Stages VC */,
 				821C8C8E1CDB33FC008FD978 /* Account */,
 				821C8C8C1CDB33EB008FD978 /* Login */,
 				821C8C8D1CDB33F3008FD978 /* Orders */,
 				821C8C8B1CDB33CC008FD978 /* Custom Cells */,
 				821C8C8A1CDB339B008FD978 /* Models */,
-				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
 				821C8C891CDB338D008FD978 /* Side Bar */,
-				823AEDD61B4E2B8500E64BBB /* Supporting Files */,
 				821C8C8F1CDB3422008FD978 /* Categories */,
+				82071D951CDCB37700EBF9A7 /* Dashboard */,
 				675A77791CB83405002E634D /* NeediatorHelper.h */,
-				821C8C901CDB44EF008FD978 /* DashboardViewController.h */,
-				821C8C911CDB44EF008FD978 /* DashboardViewController.m */,
+				823AEDE51B4E2B8500E64BBB /* LaunchScreen.xib */,
+				823AEDE31B4E2B8500E64BBB /* Images.xcassets */,
+				823AEDD61B4E2B8500E64BBB /* Supporting Files */,
 			);
 			path = "Chemist Plus Manager";
 			sourceTree = "<group>";
@@ -313,7 +354,7 @@
 		823AEDCB1B4E2B8500E64BBB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = adverto;
 				TargetAttributes = {
 					823AEDD21B4E2B8500E64BBB = {
@@ -424,13 +465,18 @@
 				823AEE071B4E49D600E64BBB /* OrderDetailViewController.m in Sources */,
 				82A767311CDA1CA000179B2B /* SideBarViewController.m in Sources */,
 				82EDCA021CA172A800206EC8 /* Vendor.m in Sources */,
+				82071D911CDCA49900EBF9A7 /* OrdersRequestCollectionViewController.m in Sources */,
+				82071D991CDCB5BA00EBF9A7 /* SideBarModel.m in Sources */,
+				82071D9C1CDCBCA200EBF9A7 /* SideBarTableViewCell.m in Sources */,
 				821C8C981CDB4993008FD978 /* iCarousel.m in Sources */,
 				823AEE041B4E2CF400E64BBB /* OrderViewCell.m in Sources */,
 				67E00C551CBAF5DC00D7AC8D /* VendorProfileViewCell.m in Sources */,
 				821C8C9B1CDB8282008FD978 /* DashboardFlowLayout.m in Sources */,
+				82071D941CDCA7C100EBF9A7 /* OrdersRequestCollectionViewCell.m in Sources */,
 				823AEE011B4E2C4500E64BBB /* OrderListTableViewController.m in Sources */,
 				821C8C921CDB44EF008FD978 /* DashboardViewController.m in Sources */,
 				82EB44D71CA2962C0031FF99 /* VendorAccountViewController.m in Sources */,
+				82071D9F1CDCC9AF00EBF9A7 /* PartnerAccountCell.m in Sources */,
 				82EDC9FF1CA170E800206EC8 /* VendorLoginViewController.m in Sources */,
 				82EDCA051CA1752500206EC8 /* NSString+Validation.m in Sources */,
 				823AEDD91B4E2B8500E64BBB /* main.m in Sources */,
@@ -497,6 +543,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -605,6 +652,7 @@
 				);
 				INFOPLIST_FILE = "Chemist Plus ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NPartner;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPartner.app/NPartner";
 			};
@@ -620,6 +668,7 @@
 				);
 				INFOPLIST_FILE = "Chemist Plus ManagerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.advertotechnology.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = NPartner;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NPartner.app/NPartner";
 			};

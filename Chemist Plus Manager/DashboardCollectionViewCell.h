@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DashboardCollectionViewCell : UICollectionViewCell
+@class DashboardCollectionViewCell;
 
+@protocol CollectionCellDelegate
+-(void)tableCellDidSelect:(UITableViewCell *)cell;
+@end
+
+@interface DashboardCollectionViewCell : UICollectionViewCell<UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSMutableArray *cellData;
+
+
+@property(weak,nonatomic) id<CollectionCellDelegate> delegate;
+
 @end
